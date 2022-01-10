@@ -1,0 +1,29 @@
+{
+  "name": "@kevinoid/test-finish",
+  "version": "0.0.1",
+  "description": "Test case for reading data after finish.",
+  "license": "CC0",
+  "author": "Kevin Locke <kevin@kevinlocke.name>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kevinoid/node-test-finish.git"
+  },
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "test-finish": "bin/test-finish.js"
+  },
+  "//": "All scripts should run in POSIX sh and Windows cmd.exe",
+  "scripts": {
+    "test": "./bin/test-finish.js"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": "^12.20 || >=14.13.1",
+    "npm": ">=1.3.7"
+  }
+}

@@ -1,0 +1,27 @@
+# GitHub Actions Workflow configuration
+# https://docs.github.com/actions/reference/workflow-syntax-for-github-actions
+# https://docs.github.com/actions/guides/building-and-testing-nodejs
+
+name: Node.js CI
+
+on:   # yamllint disable-line rule:truthy
+  pull_request: {}
+  push: {}
+  workflow_dispatch: {}
+
+jobs:
+  test:
+    name: Test on windows-latest
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '>=17.1'
+        architecture: x64
+        check-latest: true
+    - name: Display Node.js version
+      run: node --version
+    - name: Run tests
+      run: ./bin/test-finish.js
